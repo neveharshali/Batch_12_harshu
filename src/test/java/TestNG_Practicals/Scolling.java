@@ -1,11 +1,9 @@
 package TestNG_Practicals;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.devtools.idealized.Javascript;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -21,7 +19,7 @@ public void m1() throws InterruptedException {
 	
 	
 	//Typecasting
-	JavascriptExecutor js=(JavascriptExecutor)driver;
+	JavascriptExecutor js=(JavascriptExecutor) driver;
 	
 	//ScrollBy pixel
 	Thread.sleep(5000);
@@ -33,5 +31,7 @@ public void m1() throws InterruptedException {
 	//ScrollBy element
 	WebElement english=driver.findElement(By.xpath("//li[text()='English (UK)']"));
 	js.executeScript("arguments[0].scrollIntoView()",english);
+	
+	driver.close();
 }
 }

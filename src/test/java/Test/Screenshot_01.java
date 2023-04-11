@@ -2,6 +2,7 @@ package Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -37,11 +38,16 @@ public class Screenshot_01 {
 		//select path for screenshot
 		String path="C:\\Users\\neveh\\eclipse-workspace\\Batch_12Project\\Screenshot";
 		
+
+		//to take time and stamp here
+		Date d=new Date();
+		String FileName=d.toString().replace(":", "_").replace(" ", "_");
+		
 		
 		//now take screenshot
 		TakesScreenshot ts=(TakesScreenshot) driver;
 		File src=ts.getScreenshotAs(OutputType.FILE);
-		File dest=new File(path+"//test.png");
+		File dest=new File(path+"//"+FileName+".png");
 		FileUtils.copyFile(src, dest);
 		
 		

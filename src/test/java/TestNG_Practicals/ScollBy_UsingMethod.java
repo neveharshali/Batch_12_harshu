@@ -20,16 +20,16 @@ public class ScollBy_UsingMethod {
 		
 		//Scroll By Element
 				
-				//WebElement english =driver.findElement(By.xpath("//li[text()='English (UK)']"));
+				WebElement english =driver.findElement(By.xpath("//li[text()='English (UK)']"));
 				
-				WebElement watch=driver.findElement(By.xpath("//a[text()='Watch']"));
-				//custom_ScrollByElement(driver, english);
-				Thread.sleep(5000);
-				custom_ScrollByElement(driver, watch);
+				//WebElement watch=driver.findElement(By.xpath("//a[text()='Watch']"));
+				custom_ScrollByElement(driver, english);
+				
+				//custom_ScrollByElement(driver, watch);
 	}
 	public static void custom_ScrollByElement(WebDriver driver,WebElement element) {
 		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("argument[0].scrollIntoValue()", element);
+		js.executeScript("arguments[0].scrollIntoView()", element);
 		
 	}
 }
